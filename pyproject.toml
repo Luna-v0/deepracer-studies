@@ -1,0 +1,43 @@
+[project]
+name = "deepracer-studies"
+version = "0.1.0"
+description = "Experiment sweeps and study notebooks built on deepracer-genesis"
+# Mirrors deepracer-genesis exactly; anything wider makes the git dep unresolvable.
+requires-python = ">=3.10,<3.13"
+dependencies = [
+    "deepracer-genesis[analysis,export,hpo,nyx,vision]",
+    "matplotlib>=3.10.9",
+    "numpy>=2.2.6",
+    "optuna>=4.9.0",
+    "pandas>=2.0",
+    "seaborn>=0.13.2",
+    "torch>=2.5",
+]
+
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+# Installed editable by `uv sync` so `from experiments.baselines.camera import ...`
+# resolves no matter the cwd — including `uv run python experiments/camera_std_sweep.py`,
+# which puts experiments/ (not the repo root) on sys.path.
+[tool.setuptools.packages.find]
+include = ["experiments*"]
+
+[tool.ruff]
+line-length = 88
+
+[tool.uv.sources]
+deepracer-genesis = { git = "https://github.com/Luna-v0/deepracer-genesis.git", rev = "dev" }
+
+[dependency-groups]
+dev = [
+    "ipykernel>=7.3.0",
+    "ipython>=8.39.0",
+    "ipywidgets>=8.1.8",
+    "jupyterlab>=4.6.1",
+    "jupytext>=1.19.4",
+    "papermill>=2.7.0",
+    "pytest>=8",
+    "ruff>=0.16.5",
+]

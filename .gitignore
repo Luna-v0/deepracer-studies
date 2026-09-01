@@ -1,0 +1,35 @@
+# Training artifacts. runs/ is ~87 GB in the source repo (checkpoints, videos,
+# tensorboard event files); only the small research record below is tracked.
+runs/**
+!runs/*/
+!runs/*/logs/
+!runs/report.csv
+!runs/report.md
+!runs/*/study.db
+!runs/*/report.csv
+!runs/*/report.md
+!runs/*/logs/*.result.json
+
+# Environments and build output
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+*.pt
+*.onnx
+
+# Jupyter cruft. The .ipynb files themselves ARE tracked, outputs included —
+# those outputs are the research record.
+.ipynb_checkpoints/
+.virtual_documents/
+.jupyter/
+*.ystore.db
+
+# Tooling caches and local logs
+/logs/
+/mlruns/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
