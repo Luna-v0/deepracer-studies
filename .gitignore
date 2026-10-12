@@ -1,14 +1,18 @@
 # Training artifacts. runs/ is ~87 GB in the source repo (checkpoints, videos,
 # tensorboard event files); only the small research record below is tracked.
-runs/**
-!runs/*/
-!runs/*/logs/
-!runs/report.csv
-!runs/report.md
-!runs/*/study.db
-!runs/*/report.csv
-!runs/*/report.md
-!runs/*/logs/*.result.json
+# `**/` so notebooks run from experiments/ (experiments/runs/) are covered too.
+**/runs/**
+!**/runs/*/
+!**/runs/*/logs/
+!**/runs/report.csv
+!**/runs/report.md
+!**/runs/*/study.db
+!**/runs/*/report.csv
+!**/runs/*/report.md
+!**/runs/*/logs/*.result.json
+
+# Rollout datasets and their decoded caches (tens of GB, regenerable).
+experiments/data/
 
 # Environments and build output
 .venv/

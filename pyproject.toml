@@ -35,9 +35,12 @@ dev = [
     "ipykernel>=7.3.0",
     "ipython>=8.39.0",
     "ipywidgets>=8.1.8",
+    "jupyter-collaboration>=5.0.2",
+    "jupyter-mcp-tools>=0.1.7",
     "jupyterlab>=4.6.1",
     "jupytext>=1.19.4",
     "papermill>=2.7.0",
+    "pycrdt>=0.14.4",
     "pytest>=8",
     "ruff>=0.16.5",
 ]
