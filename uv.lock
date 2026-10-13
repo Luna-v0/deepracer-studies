@@ -766,7 +766,7 @@ wheels = [
 [[package]]
 name = "deepracer-genesis"
 version = "0.1.1"
-source = { git = "https://github.com/Luna-v0/deepracer-genesis.git?rev=dev#2762299f057a71fc1b58b7a173b4815543a18242" }
+source = { git = "https://github.com/Luna-v0/deepracer-genesis.git?rev=dev#cb7b0c93531cc42ffafb90de9b861e53915d7163" }
 dependencies = [
     { name = "genesis-world" },
     { name = "imageio", extra = ["ffmpeg"] },
